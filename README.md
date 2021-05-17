@@ -1,4 +1,4 @@
-# Props and State : 
+# Custom Hooks : 
 
 ### Author: Ahmad Al-frijat
 
@@ -10,7 +10,7 @@
 
 ### UML Diagram
 
-![UML Lab31](public/lab31.PNG.png)
+![UML Lab31](public/lab32.PNG.png)
 
 
 #### How to initialize/run your application (where applicable)

@@ -26,7 +26,16 @@ body, html {
     }
 
 }
-
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+    
+}
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+    
+}
 .todo {
 
     display:flex;
@@ -52,6 +61,8 @@ body, html {
         margin:0;
         padding:0;
         text-align: center;
+        margin-left: 50px;
+        margin-bottom: 20px;
         // margin-left: 400px;
 
         li {
@@ -98,4 +109,55 @@ body, html {
         }
     }
 
+}
+
+
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    padding: 0;
+}
+
+ .card{
+    height: 140px;
+    margin-bottom: 3%;
+    border: 1px solid gray;
+    box-shadow: 0 0  #585858, 0 0  #585858, 0 0 10px #585858;
+
+   
+}
+.card:hover{
+    cursor: pointer;
+    background-color: rgb(232, 219, 255);;
+}
+.status{
+    width: 20%;
+    font-family: none;
+    font-size: 1em;
+    height: 65%;
+    border-radius: 15px;
+}
+
+
+.card-text{
+    text-align: center;
+    line-height: 5;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.badge-success:hover{
+    cursor: pointer;
+}
+.text-muted{
+    text-align: center;
+    line-height: 5;
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    margin-top: 46px;
+    margin-right: 10px;
 }

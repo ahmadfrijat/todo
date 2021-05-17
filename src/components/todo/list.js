@@ -1,22 +1,35 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
-
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
 function TodoList(props) {
-    return (
-        <ListGroup as="ul"  >
-          {props.list.map(item => (
-            <ListGroup.Item as="li"
-              className={`complete-${item.complete.toString()}`}
-              key={item._id}
-            >
-              <span type="onClick" onClick={() => props.handleComplete(item._id)}>
-                {item.text} -- {item.assignee}
-              </span>
-            </ListGroup.Item>
-          ))}
-        </ListGroup >
-      );
+  return (
+    <ul>
+      {props.list.map(item => (
+        <Card 
+          className={`complete-${item.complete.toString()}`}
+          key={item._id}
+        >
+          <Card.Header>
+            <Badge pill variant={item.complete ? 'danger' : 'success'}>
+              {item.complete ? 'Complete' : 'Pending'}
+            </Badge>
+            <strong style={{ marginLeft: '20px' }} >
+							{item.assignee}
+						</strong>
+            <Button style={{ marginLeft: '226px' }} variant="danger" className='delete' onClick={() => props.handleDelete(item._id)}>X</Button></Card.Header>
+          <Card.Text onClick={() => props.handleComplete(item._id)}>
+            {"      "}{item.text}
+
+            <strong className="text-muted">Difficulty:{item.difficulty} </strong>
+
+          </Card.Text>
+          {/* <Card.Footer className="text-muted">Difficulty:{item.difficulty}</Card.Footer> */}
+        </Card>
+      ))}
+    </ul>
+  );
 }
 
 
@@ -26,20 +39,20 @@ function TodoList(props) {
 // class TodoList extends React.Component {
 
 //   render() {
-    // return (
-    //   <ul>
-    //     {this.props.list.map(item => (
-    //       <li
-    //         className={`complete-${item.complete.toString()}`}
-    //         key={item._id}
-    //       >
-    //         <span onClick={() => this.props.handleComplete(item._id)}>
-    //           {item.text}
-    //         </span>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // );
+// return (
+//   <ul>
+//     {this.props.list.map(item => (
+//       <li
+//         className={`complete-${item.complete.toString()}`}
+//         key={item._id}
+//       >
+//         <span onClick={() => this.props.handleComplete(item._id)}>
+//           {item.text}
+//         </span>
+//       </li>
+//     ))}
+//   </ul>
+// );
 //   }
 // }
 

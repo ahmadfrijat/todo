@@ -2,29 +2,38 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import useForm from '../hooks/hook-form.js'
 
 
 
 
 
 function TodoForm(props) {
-  const [item,setItem] = useState({});
 
-  const handleInputChange = e => {
-    setItem( {...item, [e.target.name]: e.target.value  });
+  const [item, handleInputChange, handleSubmit] = useForm(handleForm);
+  
+  function handleForm(item) {
+    props.handleSubmit(item)
+  }
+
+
+  // const [item,setItem] = useState({});
+
+//   const handleInputChange = e => {
+//     setItem( {...item, [e.target.name]: e.target.value  });
     
-};
-const  handleSubmit = (e) => {
-  e.preventDefault();
-  e.target.reset();
-  props.handleSubmit(item);
-  const item1 = {};
-  setItem(item1);
-};
+// };
+// const  handleSubmit = (e) => {
+//   e.preventDefault();
+//   e.target.reset();
+//   props.handleSubmit(item);
+//   const item1 = {};
+//   setItem(item1);
+// };
 
   return (
     <>
-     <Card style={{ marginLeft: '400px', width: '24rem', height: '25rem' ,padding: '10px' }}>
+     <Card style={{ marginLeft: '250px', width: '24rem', height: '25rem' ,padding: '10px' }}>
       <h3>Add Item</h3>
       <Form onSubmit={handleSubmit} style={{ margin: '20px' }}>
       <Form.Label>
