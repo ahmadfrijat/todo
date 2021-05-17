@@ -13,7 +13,7 @@ function ToDo(props) {
     const [list,setList] = useState([]);
 
     useEffect(() =>
-        (document.title = `To Do List Manager:(${list.filter((item) => !item.complete).length })`)
+        (document.title = `To Do List:(${list.filter((item) => !item.complete).length })`)
     );
 
     const addItem = (item) => {
