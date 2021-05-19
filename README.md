@@ -10,7 +10,7 @@
 
 ### UML Diagram
 
-![UML Lab31](public/lab32.PNG.png)
+![UML Lab31](public/lab33.PNG.png)
 
 
 #### How to initialize/run your application (where applicable)

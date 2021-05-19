@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
+import {PaginationContext} from '../context/pagination-context.js';
+import { HideShowContext } from '../context/hideShow';
+
 
 function TodoList(props) {
+  const toggleContext = useContext(HideShowContext);
+  const pagination = useContext(PaginationContext);
+
   return (
     <ul>
-      {props.list.map(item => (
+      {pagination.current.map((item) => (
         <Card 
-          className={`complete-${item.complete.toString()}`}
+          className={`complete-${item.complete} complete-${item.complete}-${toggleContext.status} card`}
           key={item._id}
         >
           <Card.Header>
