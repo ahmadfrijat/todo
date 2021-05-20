@@ -56,7 +56,7 @@ function ToDo(props) {
     <>
       <Navbar bg="primary" variant="light">
         <Nav.Link style={{ color: 'white' }} href="#home">
-          <strong className="white-text">Home</strong>
+       
 
         </Nav.Link>
       </Navbar>
