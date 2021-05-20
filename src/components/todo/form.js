@@ -13,7 +13,8 @@ function TodoForm(props) {
   const [item, handleInputChange, handleSubmit] = useForm(handleForm);
   
   function handleForm(item) {
-    props.handleSubmit(item)
+    props.handleSubmit(1, 'post', item);
+
   }
 
 

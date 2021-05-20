@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.js';
+import LoginProvider from './components/auth/context.js';
 
 
 function Main(params) {
-  return <App />;
+
+  return (
+    <LoginProvider>
+    <App />
+    </LoginProvider>
+
+  );
+  
 }
 
 // class Main extends React.Component {

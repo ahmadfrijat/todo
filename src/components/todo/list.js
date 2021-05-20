@@ -24,8 +24,8 @@ function TodoList(props) {
             <strong style={{ marginLeft: '20px' }} >
 							{item.assignee}
 						</strong>
-            <Button style={{ marginLeft: '226px' }} variant="danger" className='delete' onClick={() => props.handleDelete(item._id)}>X</Button></Card.Header>
-          <Card.Text onClick={() => props.handleComplete(item._id)}>
+            <Button style={{ marginLeft: '226px' }} variant="danger" className='delete' onClick={() => props.handleDelete(item._id, 'delete')}>X</Button></Card.Header>
+          <Card.Text onClick={() => props.handleComplete(item._id, 'put')}>
             {"      "}{item.text}
 
             <strong className="text-muted">Difficulty:{item.difficulty} </strong>

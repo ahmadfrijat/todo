@@ -10,19 +10,21 @@ import ChangeNumberOfPages from './itemperpage'
 import ToggleHideShow from './togglehideshow'
 import ToggleShowProvider from '../context/hideShow';
 
+
 import './todo.scss';
 
+const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
 function ToDo(props) {
-  const [list, _addItem, _toggleComplete, _getTodoItems, _deleteItems] =
-    useAjax();
+  // const [list, _addItem, _toggleComplete, _getTodoItems, _deleteItems] =
+  //   useAjax();
 
-  //   const [list,setList] = useState([]);
+    const [list,fetchingData] = useAjax(todoAPI);
 
   useEffect(() =>
     (document.title = `To Do List:(${list.filter((item) => !item.complete).length})`)
   );
-  useEffect(_getTodoItems, []);
+  useEffect(fetchingData, []);
   //   const addItem = (item) => {
   //       item._id = Math.random();
   //       item.complete = false;
@@ -55,6 +57,7 @@ function ToDo(props) {
       <Navbar bg="primary" variant="light">
         <Nav.Link style={{ color: 'white' }} href="#home">
           <strong className="white-text">Home</strong>
+
         </Nav.Link>
       </Navbar>
       <header>
@@ -66,7 +69,7 @@ function ToDo(props) {
       <section className="todo">
 
         <div>
-          <TodoForm handleSubmit={_addItem} />
+          <TodoForm handleSubmit={fetchingData} />
         </div>
         <PaginationContext list={list}>
         <div>
@@ -75,8 +78,8 @@ function ToDo(props) {
         <ChangeNumberOfPages/>
           <TodoList
             // list={list}
-            handleComplete={_toggleComplete}
-            handleDelete={_deleteItems}
+            handleComplete={fetchingData}
+            handleDelete={fetchingData}
           />
           </ToggleShowProvider>
               <Pagination
