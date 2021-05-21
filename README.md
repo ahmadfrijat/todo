@@ -3,7 +3,7 @@
 ### Author: Ahmad Al-frijat
 
 - [Deployed Site](https://ahmad-todo-v4.netlify.app/)
-- [PR Link](https://github.com/ahmadfrijat/todo/pull/3)
+- [PR Link](https://github.com/ahmadfrijat/todo/pull/1)
 - [Repo Link](https://github.com/ahmadfrijat/todo/tree/login-auth)
 
 ## Documentation
